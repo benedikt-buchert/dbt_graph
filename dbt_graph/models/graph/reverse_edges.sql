@@ -14,15 +14,7 @@ with
         union all
         select *
         from distinct_edges
-    ),
-
-    final as (
-        select *
-        from reversed
-        qualify
-            count(*) over (partition by source_node) < 10
-            and count(*) over (partition by target_node) < 10
     )
 
 select *
-from final
+from reversed
