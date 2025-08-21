@@ -1,0 +1,30 @@
+[0m19:25:04.220412 [debug] [MainThread]: Got an exception trying to initialize tracking
+
+
+============================== 19:25:04.258054 | f536681e-8f9b-4a3d-bcff-5a856e290270 ==============================
+[0m19:25:04.258054 [info ] [MainThread]: Running with dbt=1.10.9
+[0m19:25:04.258896 [debug] [MainThread]: running dbt with arguments {'log_format': 'default', 'log_path': 'logs', 'send_anonymous_usage_stats': 'True', 'write_json': 'True', 'target_path': 'None', 'profiles_dir': '/Users/benedikt/.dbt', 'warn_error': 'None', 'static_parser': 'True', 'version_check': 'True', 'use_experimental_parser': 'False', 'invocation_command': 'dbt init dbt_graph', 'no_print': 'None', 'use_colors': 'True', 'cache_selected_only': 'False', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'introspect': 'True', 'partial_parse': 'True', 'indirect_selection': 'eager', 'debug': 'False', 'quiet': 'False', 'fail_fast': 'False', 'printer_width': '80', 'log_cache_events': 'False', 'empty': 'None'}
+[0m19:25:04.315632 [debug] [MainThread]: Starter project path: /Users/benedikt/Documents/gitrepos/dbt_graph/.venv/lib/python3.11/site-packages/dbt/include/starter_project
+[0m19:25:04.322498 [info ] [MainThread]: 
+Your new dbt project "dbt_graph" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m19:25:04.322923 [info ] [MainThread]: Setting up your profile.
+[0m19:25:04.328002 [error] [MainThread]: Encountered an error:
+Runtime Error
+  No adapters available. Learn how to install an adapter by going to https://docs.getdbt.com/docs/connect-adapters#install-using-the-cli
+[0m19:25:04.328970 [debug] [MainThread]: Resource report: {"command_name": "init", "command_success": false, "command_wall_clock_time": 0.1353135, "process_in_blocks": "0", "process_kernel_time": 0.590234, "process_mem_max_rss": "134037504", "process_out_blocks": "0", "process_user_time": 1.572388}
+[0m19:25:04.329439 [debug] [MainThread]: Command `dbt init` failed at 19:25:04.329351 after 0.14 seconds
+[0m19:25:04.329685 [debug] [MainThread]: Flushing usage events

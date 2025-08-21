@@ -1,4 +1,4 @@
-{{ config(materialized="table", tags=["daily"]) }}
+{{ config(materialized="table") }}
 
 with recursive
     connected_components as (
@@ -8,7 +8,7 @@ with recursive
             target_node,
             1 as depth,
             [source_node] as visited_nodes
-        from {{ ref("base_identity_resolution__reverse_edges") }}
+        from {{ ref("reverse_edges") }}
         union all
         select
             cc.node_id,
@@ -16,7 +16,7 @@ with recursive
             e.target_node,
             cc.depth + 1 as depth,
             array_concat(cc.visited_nodes, [e.source_node]) as visited_nodes
-        from {{ ref("base_identity_resolution__reverse_edges") }} as e
+        from {{ ref("reverse_edges") }} as e
         inner join connected_components as cc on e.source_node = cc.target_node
         where cc.depth < 100 and not e.target_node in unnest(cc.visited_nodes)
     ),
@@ -31,7 +31,7 @@ with recursive
 
     unique_edges as (
         select distinct source_node, source_type
-        from {{ ref("base_identity_resolution__reverse_edges") }}
+        from {{ ref("reverse_edges") }}
     ),
 
     component as (
